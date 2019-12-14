@@ -3,8 +3,8 @@
     <img src="/img/70.jpg" class="user-photo">
     <p class="user-nickname">{{nickname}}</p>
     <p class="user-name">
-        Иван<br>
-        Иванович
+        {{user.name.first}}<br>
+        {{user.name.last}}
     </p>
     <hr>
     <p class="user-info-item">
