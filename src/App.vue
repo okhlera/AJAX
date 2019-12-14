@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <user-card v-if="user" :user="user"></user-card>
-    {{user}}
+      <button v-on=getUserData>click me</button>
+
   </div>
 </template>
 
@@ -25,6 +26,17 @@ export default {
       console.log('errr', err)
     })
 
+  },
+  methods:{
+    getUserData: function(){
+      this.axios.get('https://randomuser.me/api').then((response)=>{
+      console.log('response', response.data)
+      this.user = response.data.results[0]
+    }).catch(err=>{
+      console.log('errr', err)
+    })
+
+    }
   }
 }
 </script>
